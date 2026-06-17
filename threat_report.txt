@@ -1,0 +1,74 @@
+
+[INFO] Analysis started: 2026-06-17 16:50:50.934967
+[LOAD] Read 35 log lines from sample_logs.txt
+[LOAD] Successfully parsed 35 entries
+
+[MODULE 1] Brute Force Detection
+---------------------------------------------
+🚨 ALERT: BRUTE FORCE detected from 45.33.32.156 — 7 failed logins
+[INFO] 10.0.0.5 had 3 failed login(s) — below threshold
+🚨 ALERT: BRUTE FORCE detected from 172.16.0.99 — 8 failed logins
+[INFO] 203.0.113.42 had 3 failed login(s) — below threshold
+
+[MODULE 2] Path Scanning Detection
+---------------------------------------------
+🚨 ALERT: PATH SCANNING from 45.33.32.156 — probed 7 restricted paths
+    → /admin
+    → /wp-admin
+    → /phpmyadmin
+    → /shell.php
+    → /.env
+    → /etc/passwd
+    → /config.php
+
+[MODULE 3] Suspicious Path Detection
+---------------------------------------------
+🚨 ALERT: SUSPICIOUS PATH: 45.33.32.156 → /admin (403)
+🚨 ALERT: SUSPICIOUS PATH: 45.33.32.156 → /wp-admin (403)
+🚨 ALERT: SUSPICIOUS PATH: 45.33.32.156 → /phpmyadmin (403)
+🚨 ALERT: SUSPICIOUS PATH: 45.33.32.156 → /shell.php (403)
+🚨 ALERT: SUSPICIOUS PATH: 45.33.32.156 → /.env (403)
+🚨 ALERT: SUSPICIOUS PATH: 45.33.32.156 → /etc/passwd (403)
+🚨 ALERT: SUSPICIOUS PATH: 45.33.32.156 → /etc/passwd (403)
+🚨 ALERT: SUSPICIOUS PATH: 45.33.32.156 → /config.php (403)
+
+[MODULE 4] Threat Intelligence — Known Bad IPs
+---------------------------------------------
+🚨 ALERT: KNOWN MALICIOUS IP active: 45.33.32.156
+🚨 ALERT: KNOWN MALICIOUS IP active: 203.0.113.42
+
+[MODULE 5] IP Activity Summary
+---------------------------------------------
+IP ADDRESS           REQUESTS   FAILED LOGINS   STATUS
+-------------------- ---------- --------------- ----------
+45.33.32.156         14         7               ⚠ SUSPICIOUS
+172.16.0.99          8          8               ⚠ SUSPICIOUS
+192.168.1.1          4          0               Normal
+10.0.0.5             3          3               Normal
+203.0.113.42         3          3               ⚠ SUSPICIOUS
+192.168.1.2          1          0               Normal
+8.8.8.8              1          0               Normal
+192.168.1.5          1          0               Normal
+
+============================================================
+[THREAT SUMMARY]
+============================================================
+  Total unique IPs seen:  8
+  Total alerts raised:    13
+
+  High Priority Alerts:
+    🚨 ALERT: BRUTE FORCE detected from 45.33.32.156 — 7 failed logins
+    🚨 ALERT: BRUTE FORCE detected from 172.16.0.99 — 8 failed logins
+    🚨 ALERT: PATH SCANNING from 45.33.32.156 — probed 7 restricted paths
+    🚨 ALERT: SUSPICIOUS PATH: 45.33.32.156 → /admin (403)
+    🚨 ALERT: SUSPICIOUS PATH: 45.33.32.156 → /wp-admin (403)
+    🚨 ALERT: SUSPICIOUS PATH: 45.33.32.156 → /phpmyadmin (403)
+    🚨 ALERT: SUSPICIOUS PATH: 45.33.32.156 → /shell.php (403)
+    🚨 ALERT: SUSPICIOUS PATH: 45.33.32.156 → /.env (403)
+    🚨 ALERT: SUSPICIOUS PATH: 45.33.32.156 → /etc/passwd (403)
+    🚨 ALERT: SUSPICIOUS PATH: 45.33.32.156 → /etc/passwd (403)
+    🚨 ALERT: SUSPICIOUS PATH: 45.33.32.156 → /config.php (403)
+    🚨 ALERT: KNOWN MALICIOUS IP active: 45.33.32.156
+    🚨 ALERT: KNOWN MALICIOUS IP active: 203.0.113.42
+
+[INFO] Analysis completed: 2026-06-17 16:50:50.937815
