@@ -4,9 +4,6 @@ A Python-based IDS that parses web server logs and automatically
 detects brute force attacks, directory scanning, suspicious paths, 
 and known malicious IPs.
 
-Built as part of my self-taught cybersecurity sprint for
-IIT Kanpur B.Cyber application (Wadhwani School of AI and Intelligent Systems).
-
 ---
 
 ## ⚡ Features
